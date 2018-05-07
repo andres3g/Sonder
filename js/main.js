@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function()
 
           var sonderTitle = document.getElementById('title');
           var sonderArtist = document.getElementById('artist');
-          var babeAlbum = document.getElementById('album');
+          
 
           var pageUrl = tab[0].url;
           var pageTitle = tab[0].title;
