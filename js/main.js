@@ -93,5 +93,28 @@ document.addEventListener('DOMContentLoaded', function()
 
             }
 
+
+            function buscar() {
+
+              var sonderArtist = document.getElementById('artist').value;
+              var sonderTitle = document.getElementById('title').value;
+
+              var consulta = "https://orion.apiseeds.com/api/music/lyric/" + sonderArtist + "/" + sonderTitle + "?apikey=VfY50gfnO0n7men6lcciroHRj5KhWayjQMHO3LmnwTLGTVKKFKj79WO3Gvg52bnG";
+
+              fetch(consulta)
+              .then((respuesta) =>{
+                return respuesta.json();
+              }).then((respuesta) => {
+                document.getElementById('lyric').innerHTML += respuesta.result.track.text;
+                document.getElementById('artist2').innerHTML += respuesta.result.artist.name;
+                console.log(respuesta.result.artist.name)
+              }
+
+
+               )
+
+            }
+
+
       });
 });
