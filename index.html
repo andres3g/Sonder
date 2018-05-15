@@ -5,19 +5,28 @@
     <title>Sonder</title>
     <script src="js/main.js"></script>
   </head>
-  <body>
+  <body id="cuerpo">
+
     <div style="text-align: center;">
       <h1>Sonder</h1>
+    </div>
+    <div style="text-align: center;" id="ver">
       <h3>Artista:</h3>
       <input type="text" name="artista" id="artist" value="">
       <h3>Nombre de la canción:</h3>
       <input type="text" name="cancion" id="title" value="">
       <br><br>
-      <a href="letra.html"><button style="text-align: center;" type="button" name="button" onclick="buscar()" id="boton1">Buscar</button></a>
+      <button style="text-align: center;" type="button" name="button" id="boton1">Buscar</button>
+      <a href="letra.html"></a>
       <br>
       <div>
         <strong> <p style="color: red"; id="warning"></p> </strong>
     </div>
+    </div>
+    <div style="text-align: center;" style='display:none;' id="letra">
+      <strong><p id="artist2"></p></strong>
+      <h3 id="nombre" ></h3>
+      <p id="lyric"></p>
     </div>
 
   </body>
