@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function()
 
   var sonderBtm = document.getElementById('artista');
     var addBtn = document.getElementById('nombre');
-    
+
 
     chrome.tabs.query({ currentWindow: true, active: true }, function (tab)
       {
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function()
 
   function buscar(title,artist) {
 
-    var sonderArtist = artist;
+    var sonderArtist = artist.replace(" ", " ").trim();;
     var sonderTitle = title;
 
     var consulta = "https://orion.apiseeds.com/api/music/lyric/" + sonderArtist + "/" + sonderTitle + "?apikey=VfY50gfnO0n7men6lcciroHRj5KhWayjQMHO3LmnwTLGTVKKFKj79WO3Gvg52bnG";

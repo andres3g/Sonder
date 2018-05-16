@@ -16,7 +16,8 @@
       <h3>Nombre de la canción:</h3>
       <input type="text" name="cancion" id="title" value="">
       <br><br>
-      <button style="text-align: center;" type="button" name="button" id="boton1">Buscar</button>
+      <button style="text-align: center;" type="button" name="button" id="boton1" >Buscar</button>
+      <!-- action="<?php echo $_SERVER["PHP_SELF"]; ?>" -->
       <a href="letra.html"></a>
       <br>
       <div>
@@ -25,8 +26,22 @@
     </div>
     <div style="text-align: center;" style='display:none;' id="letra">
       <strong><p id="artist2"></p></strong>
+
       <h3 id="nombre" ></h3>
       <p id="lyric"></p>
+      <?php
+          error_reporting(0);
+          $nombre = $_GET["nombre"];
+          $lyric = $_GET["lyric"];
+          $num = rand();
+          $codigo = "$num";
+            if($nombre != null && $lyric != null){
+              $conexion = mysqli_connect("localhost:3307", "root", "", "personas");
+              $query = "INSERT INTO `tblcancion`(`codigo`, `nombre`, `letra`, `caratula`, `genero`) VALUES (.$codigo,.$nombre,.$lyric,[value-4],[value-5])');";
+              mysqli_query($conexion, $query);
+    }
+  ?>
+
     </div>
 
   </body>
