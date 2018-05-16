@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function()
 
   var sonderBtm = document.getElementById('artista');
     var addBtn = document.getElementById('nombre');
+    
 
     chrome.tabs.query({ currentWindow: true, active: true }, function (tab)
       {
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function()
       // location.replace("letra.html")
         document.getElementById('lyric').innerHTML = respuesta.result.track.text;
         document.getElementById('artist2').innerHTML = respuesta.result.artist.name;
+        document.getElementById('nombre').innerHTML = respuesta.result.track.name;
         document.getElementById("cuerpo").style.width = "200px"
     //    document.getElementById('cuerpo').style.width = ;
       //  return respuesta.result.track.text;
