@@ -1,0 +1,8 @@
+{
+  "track":{
+    "name":"DARE","mbid":"7c146b44-4454-4429-9c27-01a6dc936fff",
+    "url":"https://www.last.fm/music/Gorillaz/_/DARE","duration":"244000","streamable":{"#text":"0","fulltrack":"0"},"listeners":"1020912","playcount":"6478944","artist":{"name":"Gorillaz","mbid":"e21857d5-3256-4547-afb3-4b6ded592596","url":"https://www.last.fm/music/Gorillaz"},"album":{"artist":"Gorillaz","title":"Demon Days","mbid":"ad0a377b-6c7c-30ff-921d-a47edae073e2","url":"https://www.last.fm/music/Gorillaz/Demon+Days",
+    "image":[{"#text":"https://lastfm-img2.akamaized.net/i/u/34s/cc20462cb48240d5a45116946e29ff06.png","size":"small"},
+             {"#text":"https://lastfm-img2.akamaized.net/i/u/64s/cc20462cb48240d5a45116946e29ff06.png","size":"medium"},
+             {"#text":"https://lastfm-img2.akamaized.net/i/u/174s/cc20462cb48240d5a45116946e29ff06.png","size":"large"},
+             {"#text":"https://lastfm-img2.akamaized.net/i/u/300x300/cc20462cb48240d5a45116946e29ff06.png","size":"extralarge"}]}}}

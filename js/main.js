@@ -53,11 +53,9 @@ document.addEventListener('DOMContentLoaded', function()
           if(newArtist.indexOf('"')>-1)
               newArtist = newTitle.replace(regex,"").trim();
 
-              //aqui voy
               sonderTitle.value = newTitle;
               sonderArtist.value = newArtist;
         }
-          //falta
 
           var id = url.substring(url.lastIndexOf("watch?v=") + "watch?v=".length,url.length);
 
@@ -96,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function()
 
     var consulta = "https://orion.apiseeds.com/api/music/lyric/" + sonderArtist + "/" + sonderTitle + "?apikey=VfY50gfnO0n7men6lcciroHRj5KhWayjQMHO3LmnwTLGTVKKFKj79WO3Gvg52bnG";
 
-    console.log(sonderArtist + "%%" + sonderTitle, consulta);
+    var consulta2 = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=8e9bafd865b81c7b344ed928b65cdab9&artist="+sonderArtist+"&track="+sonderTitle+"&format=json";
 
     fetch(consulta)
     .then((respuesta) =>{
@@ -105,15 +103,32 @@ document.addEventListener('DOMContentLoaded', function()
     }).then((respuesta) => {
       console.log("Entra al segundo");
       console.log(respuesta.result.track.text);
+      buscar2(consulta2);
       document.getElementById('letra').style.display = 'block';
       document.getElementById('ver').style.display = 'none';
-      // location.replace("letra.html")
+      document.getElementById('cover').style.display = 'block';
+      document.getElementById('cover').style.align = 'center';
+
         document.getElementById('lyric').innerHTML = respuesta.result.track.text;
         document.getElementById('artist2').innerHTML = respuesta.result.artist.name;
         document.getElementById('nombre').innerHTML = respuesta.result.track.name;
-        document.getElementById("cuerpo").style.width = "200px"
-    //    document.getElementById('cuerpo').style.width = ;
-      //  return respuesta.result.track.text;
-    }
-     )
+        document.getElementById("cuerpo").style.width = "200px";
+    });
+
   }
+
+   function buscar2(consulta2) {
+
+      fetch(consulta2)
+      .then((respuesta2)=>{
+        return respuesta2.json();
+      }).then((respuesta2) => {
+
+        console.log(respuesta2.track.album.image[2]['#text']);
+         var imagen = document.getElementById('cover');
+        imagen.src = respuesta2.track.album.image[2]['#text'];
+
+      });
+
+
+   }
